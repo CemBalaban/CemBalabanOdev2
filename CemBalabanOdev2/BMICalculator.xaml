@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CemBalabanOdev2.BMICalculator"
+             Title="VKİ Hesaplayıcı">
+
+    <Grid RowDefinitions="*,Auto, Auto">
+
+
+        <VerticalStackLayout Spacing="20">
+
+            <Label
+            Text="VKİ = Ağırlık / (Boy*Boy)"
+            TextColor="#FF7F00"
+            FontSize="32"
+            />
+            
+            <Label Text="Boyunuz"
+                       TextColor="#00b9ff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Margin="0, 20, 0, 0"
+                       />
+
+            <Border Grid.Column="1"
+                            BackgroundColor="#808080"
+                            StrokeShape="RoundRectangle 25"
+                            Padding="20, 10"
+                            StrokeThickness="0"
+                        HorizontalOptions="Center">
+                <Label Text="{Binding Source={x:Reference heightSlider},
+                        Path=Value, 
+                        StringFormat='{0:F0} CM'}"
+                       TextColor="#00b9ff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Padding="5"
+                       />
+            </Border>
+
+            <Slider x:Name="heightSlider"
+                        ThumbColor="Gray"
+                        MinimumTrackColor="White"
+                        MaximumTrackColor="White"                        
+                        Maximum="250"
+                        Minimum="10"
+                        Value="170"
+                        IsEnabled="{Binding IsNotCalculated}"
+                        />
+
+
+            <Label Text="Kilonuz"
+                       TextColor="#00b9ff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Margin="0, 20, 0, 0"
+                       />
+
+            <Border Grid.Column="1"
+                            BackgroundColor="#808080"
+                            StrokeShape="RoundRectangle 25"
+                            Padding="20, 10"
+                            StrokeThickness="0"
+                        HorizontalOptions="Center">
+                <Label Text="{Binding Source={x:Reference weightSlider},
+                        Path=Value, 
+                        StringFormat='{0:F0} KG'}"
+                       TextColor="#00b9ff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Padding="5"
+                       />
+            </Border>
+
+            <Slider x:Name="weightSlider"
+                        ThumbColor="Gray"
+                        MinimumTrackColor="White"
+                        MaximumTrackColor="White"                        
+                        Maximum="150"
+                        Minimum="10"
+                        Value="68"
+                        IsEnabled="{Binding IsNotCalculated}"
+                        />
+            <Button
+                Text="HESAPLA!"
+                Clicked="CalculateBMI_Pressed"
+                
+                />
+            
+            <Label
+                Margin="0,20"
+                TextColor="#FF7F00"
+                x:Name="endeks"
+                Text="Vücut Kitle Endeksiniz: "
+                />
+            <Label
+                x:Name="durum"
+                Text="Durum: "
+                TextColor="#00b9ff"
+                />
+
+        </VerticalStackLayout>
+
+
+
+
+
+    </Grid>
+
+</ContentPage>

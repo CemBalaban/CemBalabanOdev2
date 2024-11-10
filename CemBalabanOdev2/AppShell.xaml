@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CemBalabanOdev2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CemBalabanOdev2"
+    Shell.FlyoutBehavior="Flyout"
+    Title="CemBalabanOdev2">
+
+    <ShellContent
+        Title="Ana Sayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" 
+        Icon="home.jpeg"/>
+
+    <ShellContent
+        Title="VKİ Hesaplama"
+        ContentTemplate="{DataTemplate local:BMICalculator}"
+        Route="BMICalculator"
+        Icon="bmi.jpeg"
+        />
+    
+    <ShellContent
+        Title="Renk Seçici"
+        ContentTemplate="{DataTemplate local:ColorPicker}"
+        Route="ColorPicker"
+        Icon="rs.jpeg"
+        />
+    
+    <ShellContent
+        Title="Kredi Hesaplama"
+        ContentTemplate="{DataTemplate local:CreditCalculator}"
+        Route="CreditCalculator"
+        Icon="kh.jpeg"
+        />
+    
+    <ShellContent
+        Title="Yapılacaklar Listem"
+        ContentTemplate="{DataTemplate local:ToDoList}"
+        Route="ToDoList"
+        Icon="yl.jpeg"
+        />
+
+</Shell>
